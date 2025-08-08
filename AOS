@@ -1,3 +1,4 @@
+//take multiple lines as command line arguments and print their inode number
 #include<stdio.h>
 #include<sys/stat.h>
 
