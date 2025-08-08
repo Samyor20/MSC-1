@@ -4,14 +4,14 @@
 
 void main(int n, char *arglist[1] {
   int i;
-struct stat;
+struct stat
   printf("the number of command line arguments are %d\n",n);
   for(int i=0;i<n;i++) {
         printf("arguement %d = %s, i+1,arglist[i]");
         printf("Success = %d \n", stat(arglist[i],&s);
 if(stat(arglist[i],&s) == 0) {
 
-  printf("Inode = %d \n, s,st_ino);
+  printf("Inode = %d \n, s.st_ino);
           }
 }
 }
