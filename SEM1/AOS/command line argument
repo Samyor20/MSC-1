@@ -1,0 +1,10 @@
+#include<stdio.h>
+
+void main(int argc, int *arv[]) {
+  printf("total numbers of command line arguments are-%d\n",argc);
+int i;
+for(int i=0;i<argc;i++) {
+printf("Commands arguments are = %s\n",arv[i]);
+}
+
+  
