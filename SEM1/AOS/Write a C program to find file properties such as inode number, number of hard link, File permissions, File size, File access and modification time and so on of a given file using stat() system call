@@ -16,8 +16,11 @@ for(int i=0;i<argc;i++) {
     printf("File size: %d", file_st.st_size);
     printf("File Last accessed time: %T", file_st.st_atime);
     printf("File last Modified time: %T",file_st.st_mtime);
-
 }
+
+if(file_st, file_stat == -1) {
+perror("inappropriate message");
 exit(0);
 }
-  
+return;
+}
