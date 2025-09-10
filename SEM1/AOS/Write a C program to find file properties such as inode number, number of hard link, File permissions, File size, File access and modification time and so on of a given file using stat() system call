@@ -2,15 +2,15 @@
 #include<stdlib.h>
 #include<sys/stat.h>
 
-void main( int argc, char *argv){
+void main( int argc, char *argv[]){
 
 printf("command line arguments are : %s", argc);
 
 int i;
 struct stat file_st;
-for(int i=0;i<argc;i++) {
+for(int i=1;i<argc;i++) {
     printf("command line arguments are: %s", argv[i]);
-    printf("file inode number: ",file_st.st_inode);
+    printf("file inode number: ",file_st.st_ino);
     printf("Number of hardlinks = %d",file_st.st_nlink);
     printf("File Permissions: %s", file_st.st_mode);
     printf("File size: %d", file_st.st_size);
