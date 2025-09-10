@@ -4,4 +4,8 @@
 #include<sys/stat.h>
 #include<stdlib.h>
 
-int
+void main(int argc, int argv[]) 
+{
+    printf("total number of command line arguments are: %d", argc);
+    
+    
