@@ -10,5 +10,14 @@ int i;
 struct stat file_st;
 for(int i=0;i<argc;i++) {
     printf("command line arguments are: %s", argv[i]);
+    printf("file inode number: ",file_st.st_inode);
+    printf("Number of hardlinks = %d",file_st.st_nlink);
+    printf("File Permissions: %s", file_st.st_mode);
+    printf("File size: %d", file_st.st_size);
+    printf("File Last accessed time: %T", file_st.st_atime);
+    printf("File last Modified time: %T",file_st.st_mtime);
 
+}
+exit(0);
+}
   
