@@ -9,13 +9,15 @@ void main(int argc, int argv[])
     printf("total number of command line arguments are: %d", argc);
 
     int i;
-    for(int i=0;i<argv;i++) {
-        printf("command arguments are: %d", argv);
+    struct stat file_st;
+    for(int i=0;i<argc;i++) {
+        printf("command arguments are: %d", argv[i]);
     }
-    for(int i=0; i<argv;i++) {
+    for(int i=0; i<argc;i++) {
+        stat(argv[i],&file_st
         printf("file inode number = %d", file_st.st_ino);
-    exit(0);
-}
+    }
+exit(0);
 }
 
     
