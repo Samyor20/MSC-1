@@ -1,0 +1,34 @@
+//Write a C program that a string as an argument and return all the files that begins with that name in the current directory. For example > ./a.out foo will return all file names that begins with foo
+
+#include<stdio.h>
+#include<dirent.h>
+#include<string.h>
+
+int main(int argc, char *argv[]) {
+
+	if(argc != 2) {
+	fprintf(stderr,"Usage = %s </prefix>\n",argv[0]);
+	return 1;
+	}
+const char *prefix = argv[1];
+DIR *d;
+struct dirent *dir;
+
+d=opendir(".");
+if(d = NULL) {
+perror("Cant open the directory");
+return 1;
+
+while(dir=readdir(d) != NULL) {
+	
+	if(strncmp(dir->d_name,prefix,strlen(prefix)) == 0)
+	{
+	printf("%s\n",dir->d_name);
+	}
+
+	closedir(d);
+	return 0;
+	}
+    }
+}
+
