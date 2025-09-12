@@ -13,6 +13,19 @@ return 1;
 const char *file_name = argv[0];
 struct stat file_st;
 
+if(stat(filename,&file_st == 0)) 
+{
+printf("The File %s exists in the current directory ");
+} else {
+  if(errno == ENONENT)
+printf("The file %s does not exists in this directory");
+} else {
+peror("Error geting the file status. ");
+}
+return 0;
+}
+
+
 
 }
 
