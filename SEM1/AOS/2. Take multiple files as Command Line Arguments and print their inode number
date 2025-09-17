@@ -1,4 +1,4 @@
-//2. Take multiple files as Command Line Arguments and print their inode number
+//Take multiple files as Command Line Arguments and print their inode number
 
 #include<stdio.h>
 #include<sys/stat.h>
