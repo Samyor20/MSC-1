@@ -27,4 +27,21 @@ dir = opendir(".");
   }
 printf("files created in month: %d\n", target_month);
 
+    while(entry = readdir != NULL) {
+        if(strcmp->d_name,"." ) == 0 || (strcmp->d_name."..") == 0 {
+        continue;
+        }
+    if(stat(entry->d_name, &fileStat) = -1 {
+    perror("error getting file");
+    continue;
+}
+timeInfo = localtime(&fileStat.st_ctime);
+
+
+    if(timeInfo ->tm_mon + 1 = target_month) {
+    printf(": %s\n",entry->d_name); 
+        }
+    }
+closedir(dir);
+return 0;
 } 
