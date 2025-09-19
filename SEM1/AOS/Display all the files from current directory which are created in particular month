@@ -5,8 +5,26 @@
 #include<time.h>
 
 int main(int argc, char *argv) {
-  if(argc != 2) {
+//checks the month argument is provided
+if(argc != 2) {
     printf("usage = %s\n <month_number>\n",argv[0]);
-    
+    printf("Enter the month number(1-12) (eg-: enter 1-january, 12-December): ");
   } 
+int target_month = atoi(argv[1]);//converts time into string
+  if(target_month < 1 || target_month > 12) {
+  printf("Invalid mnth credentials!.. please enter between 1-12");
+  return 1;
+  }
+DIR *dir;
+  struct *entry;
+  struct stat fileStat;
+  struct tm timeInfo;
+
+dir = opendir(".");
+  if(dir == NULL) {
+  printf("unable to open the file ");
+  return 1;
+  }
+printf("files created in month: %d\n", target_month);
+
 } 
