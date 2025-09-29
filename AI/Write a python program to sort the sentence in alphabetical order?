@@ -1,1 +1,3 @@
-
+sentence = input("enter the sentence")
+sorted_sentence = ' '.join(sorted(sentence.split()));
+print("sorted sentence = ",sorted_sentence)
