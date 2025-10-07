@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<sys/stat.h>
+#include<unistd.h>
+#include<signal.h>
+
+int main() {
+  pid_t pid = fork();
+
+if(pid < 0) {
+  perror("fork failed")
+  exit(1);
+}
+if( pid == 0) {
+  while(1)
+  printf("child is working..");
+  sleep(1);
+} else {
+  sleep(3);//let the parent sleep for 3 second
+  printf("parent suspending child\n");
+  kill(pid,SIGSTOP);
+
+  sleep(3);
+  printf("child is resuming");
+  kill(pid,SIGCONT);
+
+  sleep(3);
+  printf("parent terminating child");
+  kill(pid,SIGTERM);
+
+wait(NULL);
+printf("child process terminated");
+}
+return 0;
+}
