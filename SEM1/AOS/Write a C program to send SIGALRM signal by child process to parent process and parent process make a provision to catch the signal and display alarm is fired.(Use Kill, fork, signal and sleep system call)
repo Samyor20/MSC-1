@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<signal.h>
+
+void alarm_handler(int sig){
+printf("Alarm is fired! (signal recieved by parent) \n");
+}
+
+int main() {
+pid_t pid = fork();
+
+signal(SIGALRM, alarm_handler);
+
+pid = fork();
+
+if(pid < 0) {
+  printf("fork failed! \n");
+  exit(1);
+}
+if(pid == 0) {
+// child process 
+  sleep(2);
+  kill(getppid,SIGALRM);
+  exit(0);
+} else {
+//parent process
+printf("Parent waiting for SIGALRM from child");
+pause();
+printf("parent continues its operation after signal");
+}
+return 0;
+}
