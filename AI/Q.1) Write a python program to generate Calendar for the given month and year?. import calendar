@@ -1,0 +1,12 @@
+import calendar
+
+def generate_calendar(year, month):
+    cal = calendar.monthcalendar(year, month)
+    print("Mo Tu We Th Fr Sa Su")
+    for week in cal:
+        print(" ".join(f"{day:2}" if day else "  " for day in week))
+
+year = int(input("Enter the year: "))
+month = int(input("Enter the month (1-12): "))
+
+generate_calendar(year, month)
