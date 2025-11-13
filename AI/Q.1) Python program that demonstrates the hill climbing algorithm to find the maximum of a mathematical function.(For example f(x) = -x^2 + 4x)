@@ -1,0 +1,9 @@
+def f(x):
+    return -(x**2)+4*x
+def hill_climbing(x,step,iterations):
+    for _ in range(iterations):
+        x = x + step
+        if f(x + step) > f(x):
+            break
+            return x,f(x)
+        
