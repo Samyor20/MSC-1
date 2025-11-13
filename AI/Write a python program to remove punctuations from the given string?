@@ -1,0 +1,9 @@
+import string
+
+remove_punctuation = lambda s:s.translate(str.maketrans("","",string.punctuation))
+
+input_string = input("Enter the string: ")
+output_string = remove_punctuation(input_string)
+
+print("String without punctuation: ",output_string)
+
